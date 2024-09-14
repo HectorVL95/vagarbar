@@ -10,7 +10,12 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'white': "#EEEEEE",
+        'black': "#000000"
       },
+      backgroundImage: {
+        "orange-drink": "url('/img/IMG_6886.jpg')"
+      }
     },
   },
   plugins: [],
