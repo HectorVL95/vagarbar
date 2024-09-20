@@ -1,17 +1,18 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { MdMenu } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { Context } from "@/context/global-context";
 
 const Header = () => {
   const [mobile_show_nav, set_mobile_show_nav] = useState(null);
   const [show_nav, set_show_nav] = useState(null)
   const [show_menu_btn, set_show_menu_btn] = useState(null)
   const [show_social_media, set_show_social_media] = useState(null)
-  const [, set_screen_width] = useState(window.innerWidth)
+  const { set_screen_width } = useContext(Context)
 
   useEffect(() => {
     const dissapear_mobile_nav = () => {

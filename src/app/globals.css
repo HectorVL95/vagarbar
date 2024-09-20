@@ -31,3 +31,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.slick-slide {
+  padding: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px
+}
