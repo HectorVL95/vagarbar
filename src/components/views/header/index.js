@@ -12,44 +12,38 @@ const Header = () => {
   const [show_nav, set_show_nav] = useState(null)
   const [show_menu_btn, set_show_menu_btn] = useState(null)
   const [show_social_media, set_show_social_media] = useState(null)
-  const { set_screen_width } = useContext(Context)
+  const { screen_width, set_screen_width } = useContext(Context)
 
   useEffect(() => {
-    const dissapear_mobile_nav = () => {
-      const width = window.innerWidth
-      set_screen_width(width)
+    if(typeof window !== 'undefined') {
 
-      if (width > 768) {
-        set_show_social_media(!show_social_media)
-
-      }
-      if (width < 768) {
-        set_show_social_media(null)
+      const handle_resize = () => {
+        set_screen_width(window.innerWidth);
+        if (screen_width < 1020) {
+          set_mobile_show_nav(null)
+        }
       }
 
-      if (width < 1020) {
-        set_show_menu_btn(!show_menu_btn)
-        set_show_nav(null)
-      } else {
-        set_mobile_show_nav(null)
-        set_show_menu_btn(null)
-        set_show_nav(!show_nav)
+      window.addEventListener('resize', handle_resize);
+
+      handle_resize();
+
+      return () => {
+        window.removeEventListener('resize', handle_resize);
       }
 
+    }
 
-    };
 
-    window.addEventListener('resize', dissapear_mobile_nav)
 
-    dissapear_mobile_nav();
-  }, [])
+  }, [set_screen_width]);
 
 
   return (
     <header className="p-4">
       <div className="flex justify-between items-center ">
         {
-          show_menu_btn &&
+          screen_width < 1020 &&
           <div>
             <MdMenu  onClick={() => set_mobile_show_nav(!mobile_show_nav)} className="w-8 h-8"/>
           </div>
@@ -58,7 +52,7 @@ const Header = () => {
           <p className="text-3xl hover:cursor-default">VagarBar</p>
         </div>
         {
-          show_nav &&
+          screen_width > 1020 &&
           <ul className="flex gap-20 items-center">
             <li className="hover:cursor-pointer hover:underline underline-offset-8">Principal</li>
             <li className="hover:cursor-pointer hover:underline underline-offset-8">Acerca De</li>
@@ -67,7 +61,7 @@ const Header = () => {
           </ul>
         }
         {
-          show_social_media && 
+          screen_width > 768 && 
           <div className="flex justify-around items-center gap-4">
             <FaFacebookF />
             <FaInstagram />
