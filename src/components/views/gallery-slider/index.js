@@ -4,6 +4,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Section from "@/components/layouts/main-layout";
 
 const GallerySlider = () => {
 
@@ -37,9 +38,9 @@ const GallerySlider = () => {
   };
 
   return (
-    <section className="px-8 py-20 flex flex-col justify-center items-center gap-4">
+    <Section custom_style={'gap-4'}>
       <p className="text-center text-3xl">Galeria</p>
-      <div className="w-4/5 max-w-5xl">
+      <div className="w-4/5">
         <Slider {...settings}>
           {
             images.map(el => 
@@ -56,7 +57,7 @@ const GallerySlider = () => {
           }
         </Slider>
       </div>
-    </section>
+    </Section>
   );
 }
 
