@@ -9,9 +9,6 @@ import { Context } from "@/context/global-context";
 
 const Header = () => {
   const [mobile_show_nav, set_mobile_show_nav] = useState(null);
-  const [show_nav, set_show_nav] = useState(null)
-  const [show_menu_btn, set_show_menu_btn] = useState(null)
-  const [show_social_media, set_show_social_media] = useState(null)
   const { screen_width, set_screen_width } = useContext(Context)
 
   useEffect(() => {

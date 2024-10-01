@@ -14,7 +14,7 @@ module.exports = {
         'black': "#000000"
       },
       backgroundImage: {
-        "orange-drink": "url('/img/IMG_6886.jpg')",
+        "orange-drink": "url('/img/IMG_6886.JPG')",
         "owner-serving": "url('/img/serving.jpg')"
       }
     },
