@@ -20,7 +20,9 @@ const MessageForm = () => {
           </div>
         </div>
       </div>
-      <form className="flex flex-col justify-center items-center gap-4 border p-4 w-full max-w-xl">
+        <form className="flex flex-col justify-center items-center gap-4 border p-4 w-full max-w-xl"   action="https://formspree.io/f/xldrqqao"
+        method="POST"
+        >
         <div className="w-full">
           <p>Nombre</p>
           <input
@@ -58,7 +60,7 @@ const MessageForm = () => {
           />
         </div>
         <div className="flex justify-center items-center">
-          <button className="py-2 px-10 border-2 border-white text-white hover:bg-white hover:text-black">Enviar</button>
+          <button className="py-2 px-10 border-2 border-white text-white hover:bg-white hover:text-black" type="submit">Enviar</button>
         </div>
       </form>
     </Section>

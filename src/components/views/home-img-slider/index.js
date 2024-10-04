@@ -1,5 +1,3 @@
-
-
 const HomeImageSlider = () => {
   return (
     <section className="relative bg-orange-drink bg-cover bg-center bg-no-repeat h-[700px] flex justify-center items-center">
