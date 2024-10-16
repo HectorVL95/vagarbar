@@ -9,7 +9,7 @@ import { Context } from "@/context/global-context";
 
 const Header = () => {
   const [mobile_show_nav, set_mobile_show_nav] = useState(null);
-  const { screen_width, set_screen_width } = useContext(Context)
+  const { screen_width, set_screen_width } = useContext(Context);
 
   useEffect(() => {
     if(typeof window !== 'undefined') {
