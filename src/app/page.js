@@ -9,14 +9,16 @@ import Footer from "@/components/views/footer";
 
 export default function Home() {
   return (
-    <main>
-      <Header />
-      <HomeImageSlider />
-      <HomeBriefInfo />
-      <GallerySlider />
-      <About />
-      <MessageForm />
-      <Footer />
+    <main className="max-w-[1920px]">
+      <div>
+        <Header />
+        <HomeImageSlider />
+        <HomeBriefInfo />
+        <GallerySlider />
+        <About />
+        <MessageForm />
+        <Footer />
+      </div>
     </main>
   );
 }
