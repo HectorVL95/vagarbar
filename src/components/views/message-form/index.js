@@ -20,7 +20,7 @@ const MessageForm = () => {
           </div>
         </div>
       </div>
-      <form className="flex flex-col justify-center items-center gap-4 border p-4 w-full max-w-xl">
+      <form className="flex flex-col justify-center items-center gap-4 border p-4 w-full max-w-xl" action="https://formspree.io/f/xldrqqao" method="POST">
         <div className="w-full">
           <p>Nombre</p>
           <input
@@ -55,6 +55,7 @@ const MessageForm = () => {
             type="text"
             name="message"
             className="bg-black border px-4 py-2 w-full"
+            required
           />
         </div>
         <div className="flex justify-center items-center">
